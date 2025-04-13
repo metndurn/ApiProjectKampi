@@ -2,11 +2,11 @@
 {
 	public class Contact
 	{
-		public int ContactId { get; set; }
-		public string MapLocation { get; set; }
-		public string Address { get; set; }
-		public string Phone { get; set; }
-		public string Email { get; set; }
-		public string OpenHours { get; set; }
+		public string Email { get; internal set; }
+		public string MapLocation { get; internal set; }
+		public string Address { get; internal set; }
+		public string Phone { get; internal set; }
+		public string OpenHours { get; internal set; }
+		public int ContactId { get; internal set; }
 	}
 }
