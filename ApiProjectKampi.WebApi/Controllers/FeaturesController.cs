@@ -13,7 +13,7 @@ namespace ApiProjectKampi.WebApi.Controllers
 	{
 		private readonly IMapper _mapper;
 		private readonly ApiContext _context;//veritabanı bağlantısı
-		public FeaturesController(Mapper mapper, ApiContext context)
+		public FeaturesController(IMapper mapper, ApiContext context)
 		{
 			_mapper = mapper;
 			_context = context;
@@ -22,8 +22,8 @@ namespace ApiProjectKampi.WebApi.Controllers
 		public IActionResult FeatureList()
 		{ /*veritabanındaki ozellikleri getirir
 		   ama _mapper ile olan resultfeaturedtos'tan verılerı alıyor ve listeleme isleminde map kullanılabılınır*/
-			var value = _context.Features.ToList();
-			return Ok(_mapper.Map<List<ResultFeatureDtos>>(value));
+			var values = _context.Features.ToList();
+			return Ok(_mapper.Map<List<ResultFeatureDtos>>(values));
 		}
 		[HttpPost]
 		public IActionResult CreateFeature(CreateFeatureDto createFeatureDto)
@@ -47,7 +47,6 @@ namespace ApiProjectKampi.WebApi.Controllers
 			var value = _context.Features.Find(id);
 			return Ok(_mapper.Map<GetByIdFeatureDto>(value));
 		}
-
 		[HttpPut]
 		public IActionResult UpdateFeature(UpdateFeatureDto updateFeatureDto)//ozellik güncelleme
 		{

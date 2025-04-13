@@ -10,6 +10,7 @@ builder.Services.AddDbContext<ApiContext>();
 /*burada mapper kullanarak otomatik olarak map edebilecegimiz ýcýn buraya da býlgýsýný verdýk
  AutoMapper, nesneleri birbirine dönüþtürmek için kullanýlan bir kütüphanedir.
  Örneðin, bir DTO (Data Transfer Object) nesnesini bir Entity nesnesine dönüþtürmek için kullanýlabilir.*/
+
 /*C#’ta yazdýðýn bir uygulama derlendiðinde (build),
  bu uygulama bir .exe veya .dll dosyasýna dönüþür.
  Ýþte bu dosyaya "assembly" denir.*/
