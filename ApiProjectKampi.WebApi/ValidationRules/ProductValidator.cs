@@ -13,8 +13,8 @@ namespace ApiProjectKampi.WebApi.ValidationRules
 			RuleFor(x => x.Name).MaximumLength(50).WithMessage("Ürün adı en fazla 50 karakter olmalıdır.!");
 
 			RuleFor(x => x.Price).NotEmpty().WithMessage("Ürün fiyatı boş olamaz.!")
-			.LessThan(0).WithMessage("Ürün fiyatı negatif olamaz.!")
-			.GreaterThan(2000).WithMessage("Ürün fiyati bu kadar yüksek olamaz girdiğiniz değeri kontrol edin.!");
+			.GreaterThan(0).WithMessage("Ürün fiyatı negatif olamaz.!")
+			.LessThan(2000).WithMessage("Ürün fiyati bu kadar yüksek olamaz girdiğiniz değeri kontrol edin.!");
 
 			RuleFor(x => x.Description).NotEmpty().WithMessage("Ürün açıklaması boş olamaz.!");
 		}
